@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/app/ui/styling/globals.css";
 import { inter } from '@/app/fonts/fonts';
+import { Provider } from "@/components/ui/provider";
+import Navbar from "./ui/components/Navbar"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,11 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} antialiased`}
       >
-        {children}
+        <Provider>
+          <Navbar />
+          {children}
+        </Provider>
       </body>
     </html>
   );
