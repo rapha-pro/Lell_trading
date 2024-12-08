@@ -16,7 +16,7 @@ This is a modern, responsive trading portfolio website built with **Next.js**, *
 ---
 
 ## **Project Overview**
-This project aims to create an engaging portfolio website for a Customer, showcasing trading statistics, market insights, and portfolio performance. 
+This project aims to create an engaging portfolio website for a Customer, showcasing trading services, market insights, and portfolio performance. 
 
 ### **Live Demo** (Not operational yet)
 [Website Link](#) *(link to be added once deployed)*
@@ -27,14 +27,14 @@ This project aims to create an engaging portfolio website for a Customer, showca
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Programming Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Aceternity UI](https://aceternity-ui.com/)
+- **UI Components**: [Chakra UI](https://www.chakra-ui.com/), [Aceternity UI](https://aceternity-ui.com/)
 - **Linting**: [ESLint](https://eslint.org/)
 
 ---
 
 ## **Features**
 - Fully responsive design for mobile and desktop users.
-- Interactive components built with Aceternity UI.
+- Interactive components built with Chakra-ui
 - Dynamic data fetching and rendering.
 - SEO-optimized pages with Next.js.
 - Clean, maintainable, and well-documented codebase.
@@ -57,12 +57,16 @@ Make sure you have the following installed:
 
 2. Install dependencies:
    ```bash
-   npm install
+   - pnpm install
+   - pnpm i @chakra-ui/react @emotion/react
+   - pnpx @chakra-ui/cli snippet add
+   - pnpm add react-icons @chakra-ui/icons
+   - pnpm add next react react-dom (if nextjs not installed)
    ```
 
 3. Run the development server:
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 4. Open the application in your browser:
@@ -75,17 +79,20 @@ Make sure you have the following installed:
 ## **Folder Structure**
 ```plaintext
 trading-portfolio/
-├── components/          # Reusable React components
-│   ├── Header.tsx       # Site header
-│   ├── Footer.tsx       # Site footer
-│   ├── TradingCard.tsx  # Trading card component
+├── ui/
+|     ├── components/    # Reusable React components
+│        ├── navbar      # Site navbar
+│        ├── Footer.tsx  # Site footer
+│        ├── TradingCard # Trading card component
+|     ├── logo/          # pretty descriptive
+      ├── styles/        # Styling files
+│        ├── globals.css # Global styles
+│        ├── tailwind    # Tailwind base styles
 ├── pages/               # Next.js pages
 │   ├── index.tsx        # Homepage
 │   ├── about.tsx        # About page
+│   ├── service.tsx      # Service page
 │   ├── contact.tsx      # Contact page
-├── styles/              # Styling files
-│   ├── globals.css      # Global styles
-│   ├── tailwind.css     # Tailwind base styles
 ├── utils/               # Utility/helper functions
 │   ├── fetcher.ts       # API fetcher
 ├── public/              # Static assets (images, icons)
