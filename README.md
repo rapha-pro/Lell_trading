@@ -35,7 +35,6 @@ This project aims to create an engaging portfolio website for a Customer, showca
 ## **Features**
 - Fully responsive design for mobile and desktop users.
 - Interactive components built with Chakra-ui
-- Dynamic data fetching and rendering.
 - SEO-optimized pages with Next.js.
 - Clean, maintainable, and well-documented codebase.
 
