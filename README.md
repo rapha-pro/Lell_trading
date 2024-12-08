@@ -1,4 +1,4 @@
-# **Lell Trading Portfolio Website**
+# **Trading Portfolio Website**
 
 This is a modern, responsive trading portfolio website built with **Next.js**, **TypeScript**, and **Tailwind CSS** for a seamless developer and user experience.
 
@@ -51,8 +51,8 @@ Make sure you have the following installed:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/rapha-pro/Lell_trading.git
-   cd trading-portfolio
+   - git clone https://github.com/rapha-pro/Lell_trading.git
+   - cd trading-portfolio*
    ```
 
 2. Install dependencies:
