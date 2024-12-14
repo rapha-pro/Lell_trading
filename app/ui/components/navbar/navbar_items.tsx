@@ -1,9 +1,10 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from "@chakra-ui/react"
 import { AiOutlineHome, AiOutlinePhone } from 'react-icons/ai';
 import { FaInfoCircle } from 'react-icons/fa';
 import { HiOutlineClipboardList } from 'react-icons/hi';
+import clsx from 'clsx';
 
 const navLinks = [
   { label: 'Home', href: '#', icon: <AiOutlineHome /> },
@@ -29,9 +30,8 @@ export default function NavItem({ activeTab, setActiveTab, onClose }: NavItemPro
             setActiveTab(label);
             if (onClose) onClose(); 
           }}
-          className={`relative flex items-center gap-3 py-2 transition-all ${
-            activeTab === label ? 'text-yellow-600' : ''
-          } hover:text-yellow-600`}
+          color={clsx({'yellow.500': activeTab === label})}
+          className={`relative flex items-center gap-3 py-2 transition-all hover:text-yellow-500 active:outline-none focus:outline-none`}
         >
           <span className="mt-1">{icon}</span>
           {label}
