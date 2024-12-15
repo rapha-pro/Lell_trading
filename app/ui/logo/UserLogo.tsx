@@ -3,8 +3,11 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
+import { useColorModeValue } from '@/components/ui/color-mode';
 
 export default function UserLogo() {
+  const color = useColorModeValue('gray.500', 'gray.200');
+
   return (
     <Box display="flex" alignItems="center">
       <Image
@@ -20,10 +23,9 @@ export default function UserLogo() {
         ml="3"
         fontSize="xl"
         fontWeight="bold"
-        color="gray.700"
-        _dark={{ color: "white" }}
+        color={color}
       >
-        Finance Flex
+        TradeFlow
       </Box>
     </Box>
   );

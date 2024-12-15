@@ -8,7 +8,7 @@ import Navbar from "@/app/ui/components/navbar/Navbar";
 import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
-  title: "Finance Flex",
+  title: "TradeFlow",
   description: "Work free, anytime and anywhere with trading",
   icons: {
     icon: "/assets/imageLogo.png",
@@ -28,6 +28,7 @@ export default function RootLayout({
       >
         <Provider>
 			<Navbar />
+            {children}
         </Provider>
       </body>
     </html>
