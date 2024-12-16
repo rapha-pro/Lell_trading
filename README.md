@@ -27,9 +27,7 @@ This project aims to create an engaging portfolio website for a Customer, showca
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Programming Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Chakra UI](https://www.chakra-ui.com/), [Aceternity UI](https://aceternity-ui.com/)
-- **Linting**: [ESLint](https://eslint.org/)
-
+- **UI Components**: [Chakra UI](https://www.chakra-ui.com/)
 ---
 
 ## **Features**
@@ -60,7 +58,7 @@ Make sure you have the following installed:
    - pnpm install
    - pnpm i @chakra-ui/react @emotion/react
    - pnpx @chakra-ui/cli snippet add
-   - pnpm add react-icons @chakra-ui/icons
+   - pnpm add react-icons @chakra-ui/icons lucide-react
    - pnpm add next react react-dom (if nextjs not installed)
    ```
 
