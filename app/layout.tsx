@@ -8,8 +8,8 @@ import Navbar from "@/app/ui/components/navbar/Navbar";
 import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
-  title: "TradeFlow",
-  description: "Work free, anytime and anywhere with trading",
+  title: "Feathers",
+  description: "Trading made Light and Flexible",
   icons: {
     icon: "/assets/imageLogo.png",
   },

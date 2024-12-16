@@ -25,7 +25,7 @@ export default function UserLogo() {
         fontWeight="bold"
         color={color}
       >
-        TradeFlow
+        Feathers
       </Box>
     </Box>
   );
