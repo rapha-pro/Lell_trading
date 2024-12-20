@@ -609,4 +609,25 @@ export const colors = defineSemanticTokens.colors({
       },
     },
   },
+  customColor: {
+    "primary": {
+		value: "gray.focusRing"
+    },
+	"primary-light": {
+		value: {
+			_light: "{colors.gray.500}",
+        	_dark: "{colors.gray.300}",
+		}
+    },
+	"bg": {
+		value: "gray.subtle"
+	},
+	"secondary": {
+		value: "yellow.500"
+	},
+	"secondary-light": {
+		value: "yellow.400"
+	},
+
+  }
 })

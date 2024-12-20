@@ -5,7 +5,7 @@ import {
   IconButton,
   Box,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   DrawerRoot,
   DrawerTrigger,
@@ -16,22 +16,31 @@ import {
 import { LuChevronDown, LuMenu, LuX } from 'react-icons/lu';
 import Link from 'next/link';
 import UserLogo from '@/app/ui/logo/userLogo';
-import { ColorModeButton,  useColorModeValue } from '@/components/ui/color-mode';
+import { ColorModeButton, useColorMode , useColorModeValue } from '@/components/ui/color-mode';
 import NavItem from './navbar_items';
 import clsx from 'clsx';
 
 export default function Navbar() {
   const { open, onToggle, onClose } = useDisclosure();
   const [activeTab, setActiveTab] = useState('Home');
+  const { colorMode, setColorMode } = useColorMode()
 
   // Define dynamic values for colors and shadows
   const bg = 'gray.subtle';
-  const color = '';
+  const color = 'gray.focusRing';
   const shadow = useColorModeValue('shadow-md', 'shadow-lg shadow-white/20') || 'shadow-md';
+
+  useEffect(() => {
+    // Read color mode from localStorage on initial load
+    const savedColorMode = localStorage.getItem('chakra-ui-color-mode')
+    if (savedColorMode) {
+      setColorMode(savedColorMode)
+    }
+  }, [])
   
 
   return (
-    <Box bg={bg}>
+    <Box bg={bg} w="100%" maxW="100vw" color={color}>
       {/* Navbar Container */}
       <div
         className={clsx(

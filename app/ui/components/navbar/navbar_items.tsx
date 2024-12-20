@@ -9,8 +9,8 @@ import clsx from 'clsx';
 
 const navLinks = [
   { label: 'Home', href: '#', icon: <AiOutlineHome /> },
-  { label: 'About', href: '#about', icon: <FaInfoCircle /> },
   { label: 'Services', href: '#services', icon: <HiOutlineClipboardList /> },
+  { label: 'About', href: '#about', icon: <FaInfoCircle /> },
   { label: 'Contact', href: '#contact', icon: <AiOutlinePhone /> },
 ];
 

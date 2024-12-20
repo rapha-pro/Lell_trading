@@ -2,23 +2,31 @@
 
 import { motion } from 'motion/react';
 import { Box, Flex, Heading, Text, Icon } from '@chakra-ui/react';
-import { TrendingUp, Target, Award, Globe } from 'lucide-react';
+import { featuresData } from '@/app/utils/homeCards';
 
 
-interface rightPaneProps {
+interface RightPaneProps {
     bg: string;
     cardBg: string;
     cardTextColor: string;
     cardIconColor: string;
     textColor: string;
+    textStyle: TextStyle;
 }
 
-const RightPane: React.FC<rightPaneProps> = ({
+interface TextStyle {
+    base: string;
+    md: string;
+    lg: string
+}
+
+const RightPane: React.FC<RightPaneProps> = ({
     bg,
     cardBg,
     cardTextColor,
     cardIconColor,
-    textColor
+    textColor,
+    textStyle
   }) => {
     
     const cardVariants = {
@@ -39,44 +47,38 @@ const RightPane: React.FC<rightPaneProps> = ({
       }
     };
   
-    const featuresData = [
-      {
-        icon: TrendingUp,
-        title: "Strategic Trading",
-        description: "Proven track record of strategic market analysis and successful trades."
-      },
-      {
-        icon: Target,
-        title: "Precision Investing",
-        description: "Meticulously crafted investment strategies tailored to market dynamics."
-      },
-      {
-        icon: Award,
-        title: "Performance Excellence",
-        description: "Consistent high-performance results across multiple market conditions."
-      },
-      {
-        icon: Globe,
-        title: "Global Market Insight",
-        description: "Deep understanding of international market trends and opportunities."
-      }
-    ];
+    
   
     return (
       <Box 
         bg={bg} 
-        minHeight="100vh" 
         color={textColor} 
-        pt={20}
-        px={6}
+        py={[4, 8, 16]}
+        px={1}
+        w="100%"
+        maxW="100vw"
+        display="flex"
+		flexDirection="column"
+        alignItems={{ smToLgL: 'center', xl: 'flex-start' }} // Align center on small and medium devices
+        justifyContent={{ smToMd: 'center', lg: 'flex-start' }}
       >
-  
+        <Heading 
+            fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} 
+            mb={4}
+            textAlign='center'
+            justifyContent='center'
+            display={{ smToLgL: "block", xl: "none" }}
+            pb={11}
+			color="gray.emphasized"
+        >
+          Our Features
+        </Heading>
           {/* Features Cards */}
-          <Flex 
-            flex={1} 
+          <Flex  
             flexWrap="wrap" 
             gap={6} 
             justifyContent="center"
+            direction="row"
           >
             {featuresData.map((feature, index) => (
               <motion.div
@@ -85,21 +87,24 @@ const RightPane: React.FC<rightPaneProps> = ({
                 initial="initial"
                 animate="animate"
                 whileHover="hover"
-                style={{ width: '250px' }}
+                style={{ width: '16em' }}
+
               >
                 <Box 
                   bg={cardBg} 
                   p={6} 
                   borderRadius="xl" 
                   boxShadow="xl"
-                  textAlign="center"
-                  alignContent='center'
-                  alignSelf="center'"
+                  display="flex"
+                  flexDirection="column"
                   alignItems="center"
-                  boxAlign="center"
+                  justifyContent="center"
+                  textStyle={textStyle}
+                 
                 >
                   <Icon 
-                      boxSize={11}
+                      boxSize={{base: "6", md: "8", lg: "10", xl: "10", "2xl": "11"}}
+                      textStyle={textStyle}
                       aria-label={feature.title}
                       mb={5}
                       color={cardIconColor} 

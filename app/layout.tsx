@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "@/app/ui/styling/globals.css";
 import { inter } from '@/app/fonts/fonts';
 import { Provider } from "@/components/ui/provider";
-import Navbar from "@/app/ui/components/navbar/Navbar";
+import Navbar from "@/app/ui/components/navbar/navbar";
 import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {

@@ -1,14 +1,13 @@
-import { Button } from "../components/ui/button"
-import { HStack } from "@chakra-ui/react"
-import { Avatar } from "../components/ui/avatar"
-import { Card } from "@chakra-ui/react"
 import Home from "@/app/pages/home/home";
+import { Suspense } from "react"
+import Services from "@/app/pages/services/services";
 
 
 export default function Page() {
   return (
-	<>
-		<Home/>  
-	</>
+	<Suspense>
+		<Home/> 
+		<Services/> 
+	</Suspense>
   );
 }

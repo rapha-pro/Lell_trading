@@ -49,4 +49,16 @@ export const shadows = defineSemanticTokens.shadows({
       _dark: "inset 0 0 0 1px {colors.gray.300/5}",
     },
   },
+  neumorphismLight: {
+    value: {
+      _light: "6px 6px 12px {colors.gray.900/10}, -6px -6px 12px {colors.white/50}",
+      _dark: "6px 6px 12px {colors.black/30}, -6px -6px 12px {colors.gray.300/20}",
+    },
+  },
+  neumorphismInner: {
+    value: {
+      _light: "inset 4px 4px 8px {colors.gray.900/10}, inset -4px -4px 8px {colors.white/50}",
+      _dark: "inset 4px 4px 8px {colors.black/30}, inset -4px -4px 8px {colors.gray.300/20}",
+    },
+  },
 })
