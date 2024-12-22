@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Box, Heading, Text, VStack, Icon } from '@chakra-ui/react';
-import { useColorModeValue } from '@/components/ui/color-mode';
+import { useColorMode, useColorModeValue } from '@/components/ui/color-mode';
 import { useState} from 'react';
 import clsx from 'clsx';
 
@@ -14,8 +14,8 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ icon: IconComponent, title, description, index }) => {
-  const bgColor = useColorModeValue('gray.100', 'gray.800');
   const [isHovered, setIsHovered] = useState(false);
+  const { colorMode, setColorMode, toggleColorMode } = useColorMode();
 
   return (
     <motion.div
@@ -28,7 +28,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ icon: IconComponent, t
     >
       <Box
         p={8}
-        bg={bgColor}
+        bg="bg"
         borderRadius="2xl"
         position="relative"
 		shadow={clsx({
@@ -37,11 +37,15 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ icon: IconComponent, t
 		})}
 	
       >
-        <VStack spacing={6} align="start">
-          <Box p={4} borderRadius="xl" bg={useColorModeValue('white', 'gray.700')}>
+        <VStack spaceY={2} align="start">
+          <Box p={4} 
+			borderRadius="xl" 
+			bg={clsx({"gray.50": colorMode === "light", "gray.700": colorMode === "dark"})}
+			animation={isHovered ? "pulse" : ""}
+		  >
             <Icon 
                 boxSize={8} 
-                color={useColorModeValue('yellow.500', 'yellow.200')} 
+                color="customColor.secondary-emphasized" 
             >
                 <IconComponent />
             </Icon>
@@ -49,7 +53,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ icon: IconComponent, t
           <Heading size="md" fontWeight="bold" color={useColorModeValue('gray.700', 'white')}>
             {title}
           </Heading>
-          <Text color={useColorModeValue('gray.600', 'gray.300')} fontSize="md">
+          <Text color="customColor.primary-emphasized" fontSize="md">
             {description}
           </Text>
         </VStack>

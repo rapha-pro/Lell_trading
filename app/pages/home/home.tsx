@@ -10,34 +10,33 @@ import HomePageLoader from '../../ui/components/home/pageLoader';
 
 export default function Home() {
 
-  const bg = useColorModeValue('gray.50', 'gray.subtle');
-  const textColor = 'gray.600' || useColorModeValue('gray.600', 'gray.300')  
+  const textColor = 'customColor.primary-emphasized';
   const cardBg = 'gray.solid'; 
   const cardTextColor = 'gray.muted';  
-  const cardIconColor = 'yellow.500';  
-  const textStyle = {base: "sm", md: "md", lgL: "lg"}
+  const cardIconColor = 'customColor.secondary';  
+  const textStyle = {base: "sm", md: "md", lg: "lg"}
 
   return (
 	<Suspense fallback={<HomePageLoader />}>
 		<Box 
-		bg={bg} 
-		minHeight="100vh" 
-		color={textColor} 
-		pt={20}
-		px={1}
-		maxW="container.xl" 
-		mx="auto" 
-		display="flex"
-		flexDirection={{base: "column", mdToLgL: "column", xl: "row"}}
-		gap={12}
-		w="100%" 
-		
+			id="home"
+			bg="customColor.bg" 
+			color={textColor} 
+			py={20}
+			px={1}
+			maxW="container.xl" 
+			mx="auto" 
+			display="flex"
+			flexDirection={{base: "column", mdToLgL: "column", xl: "row"}}
+			gap={12}
+			w="100%" 	
 		>
 			<LeftPane textColor={textColor} textStyle={textStyle}/>
 			<RightPane 
 				cardBg={cardBg}
 				cardTextColor={cardTextColor}
 				cardIconColor={cardIconColor}
+				textColor={textColor}
 				textStyle={textStyle}
 			/>
 		</Box>

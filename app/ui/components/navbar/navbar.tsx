@@ -27,7 +27,7 @@ export default function Navbar() {
 
   // Define dynamic values for colors and shadows
   const bg = 'gray.subtle';
-  const color = 'gray.focusRing';
+  const color = 'customColor.primary';
   const shadow = useColorModeValue('shadow-md', 'shadow-lg shadow-white/20') || 'shadow-md';
 
   useEffect(() => {
@@ -40,7 +40,17 @@ export default function Navbar() {
   
 
   return (
-    <Box bg={bg} w="100%" maxW="100vw" color={color}>
+    <Box
+	    as="nav" 
+        position="fixed" 
+		top="0" 
+		left="0"  
+		bg={bg} 
+		w="100%" 
+		maxW="100vw" 
+		color={color}
+		zIndex="10"
+    >
       {/* Navbar Container */}
       <div
         className={clsx(

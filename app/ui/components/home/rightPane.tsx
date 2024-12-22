@@ -6,7 +6,6 @@ import { featuresData } from '@/app/utils/homeCards';
 
 
 interface RightPaneProps {
-    bg: string;
     cardBg: string;
     cardTextColor: string;
     cardIconColor: string;
@@ -21,7 +20,6 @@ interface TextStyle {
 }
 
 const RightPane: React.FC<RightPaneProps> = ({
-    bg,
     cardBg,
     cardTextColor,
     cardIconColor,
@@ -51,7 +49,6 @@ const RightPane: React.FC<RightPaneProps> = ({
   
     return (
       <Box 
-        bg={bg} 
         color={textColor} 
         py={[4, 8, 16]}
         px={1}

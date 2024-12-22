@@ -2,7 +2,7 @@ import { defineTokens } from "@chakra-ui/react"
 
 export const animations = defineTokens.animations({
   spin: {
-    value: "spin 1s linear infinite",
+    value: "spin 4s linear infinite",
   },
   ping: {
     value: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",

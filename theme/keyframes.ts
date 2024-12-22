@@ -252,4 +252,14 @@ export const keyframes = {
       scale: "0.95",
     },
   },
+  "border-glow": {
+    "0%, 100%": {
+      opacity: 1,
+      borderColor: "{colors.red.500}",
+    },
+    "50%": {
+      opacity: 0.5,
+      borderColor: "{colors.red.500}",
+    }
+  }
 }

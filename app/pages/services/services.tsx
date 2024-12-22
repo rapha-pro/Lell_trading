@@ -9,30 +9,29 @@ import { servicesList } from '@/app/utils/serviceData';
 import { Suspense } from 'react';
 
 export default function ServicesPage() {
-  const bgColor = useColorModeValue('gray.50', 'gray.900');
+  const cardWidth = { base: '100%', md: 'calc(50% - 2rem)', lg: 'calc(33.33% - 2rem)' };
 
   return (
     <Box 
+		id="services"
 		as="section" 
-		bg={bgColor} 
+		bg="customColor.bg" 
 		minH="100vh" 
-		py={2} 
+		py={24} 
 		px={4}
 		display="flex" 
 		alignItems="center" 
 		justifyContent="center"
 	>
       <Container maxW="container.xl">
-	 	 <Heading 
-		 	textStyle="xl"  
-			color={useColorModeValue('gray.700', 'gray.200')}
-			textAlign="center"
-			>
-            Service
-          </Heading>
         <VStack spacing={4} mb={16} textAlign="center">
-          <Heading as="h1" size="2xl" fontWeight="bold" bgGradient="linear(to-r, yellow.400, yellow.600)" bgClip="text">
-            Our Services
+          <Heading 
+			fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} 
+			bgGradient="linear(to-r, yellow.400, yellow.600)" 
+			color="customColor.primary-light-emphasized"
+			pb={12}
+		>
+            Services
           </Heading>
           <Text fontSize="xl" color={useColorModeValue('gray.600', 'gray.400')} maxW="2xl">
             Comprehensive trading and investment solutions tailored to your financial goals
@@ -49,7 +48,7 @@ export default function ServicesPage() {
         >
           <Flex flexWrap="wrap" gap={8} justify="center">
             {servicesList.map((service, index) => (
-              <Box key={service.title} width={{ base: '100%', md: 'calc(50% - 2rem)', lg: 'calc(33.33% - 2rem)' }}>
+              <Box key={service.title} width={cardWidth}>
                 <ServiceCard
                   icon={service.icon}
                   title={service.title}

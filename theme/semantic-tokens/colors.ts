@@ -613,21 +613,39 @@ export const colors = defineSemanticTokens.colors({
     "primary": {
 		value: "gray.focusRing"
     },
-	"primary-light": {
+	"primary-light-emphasized": {
 		value: {
-			_light: "{colors.gray.500}",
+			_light: "{colors.gray.400}",
+        	_dark: "{colors.gray.500}",
+		}
+    },
+	"primary-emphasized": {
+		value: {
+			_light: "{colors.gray.600}",
         	_dark: "{colors.gray.300}",
 		}
     },
+	"primary-muted": {
+		value: {
+			_light: "{colors.gray.600}",
+        	_dark: "{colors.white}",
+		}
+    },
 	"bg": {
-		value: "gray.subtle"
+		value: "{color.gray.subtle}"
 	},
 	"secondary": {
-		value: "yellow.500"
+		value: "{colors.yellow.500}"
 	},
 	"secondary-light": {
-		value: "yellow.400"
+		value: "{colors.yellow.400}"
 	},
+	"secondary-emphasized": {
+		value: {
+			_light: "{colors.yellow.500}",
+        	_dark: "{colors.yellow.200}",
+		}
+    },
 
   }
 })

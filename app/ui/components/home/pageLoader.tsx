@@ -29,7 +29,7 @@ const LeftPaneSkeleton = () => {
         </Flex>
       </Flex>
       
-      <SkeletonText mt={4} noOfLines={4} spacing={3} />
+      <SkeletonText mt={4} noOfLines={4} spaceX={3} />
       
       <Flex gap={4}>
         <Skeleton height="40px" width="120px" borderRadius="md" />
@@ -61,7 +61,7 @@ const RightPaneSkeleton = () => {
           <Flex direction="column" align="center">
             <SkeletonCircle size="12" mb={4} />
             <Skeleton height="20px" width="150px" mb={3} />
-            <SkeletonText noOfLines={3} spacing={2} width="full" />
+            <SkeletonText noOfLines={3} spaceX={2} width="full" />
           </Flex>
         </Box>
       ))}
