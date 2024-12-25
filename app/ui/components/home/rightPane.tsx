@@ -50,7 +50,7 @@ const RightPane: React.FC<RightPaneProps> = ({
     return (
       <Box 
         color={textColor} 
-        py={[4, 8, 16]}
+        py={[4, 8, 8]}
         px={1}
         w="100%"
         maxW="100vw"

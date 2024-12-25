@@ -39,7 +39,7 @@ export default function RightPane({ cardBg, cardBorder, highlightColor, textColo
             <Text mt={4} textStyle={textStyle}  color={textColor}>
                 I am dedicated professional passionate about
                 delivering exceptional experiences. With few years of experience in
-                our field, I specialize in crafting innovative trading solutions tailored
+                the field, I specialize in crafting trading solutions tailored
                 to your unique needs.
             </Text>
             <Text mt={4} textStyle={textStyle} color={textColor}>
@@ -63,11 +63,12 @@ export default function RightPane({ cardBg, cardBorder, highlightColor, textColo
         </Box>
 
         <HStack
-            justify={{ base: 'center', lg: 'flex-start' }}
+            justify="center"
             pt={{lg:18}}
             spaceX={4}
             wrap="wrap"
             gap={4}
+            alignSelf={{smToMd: "center"}}
         >
             {aboutCards.map((stat, index) => (
             <motion.div

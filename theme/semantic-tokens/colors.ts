@@ -625,9 +625,15 @@ export const colors = defineSemanticTokens.colors({
         	_dark: "{colors.gray.300}",
 		}
     },
+	"primary-light-muted": {
+		value: {
+			_light: "{colors.gray.500}",
+        	_dark: "{colors.white}",
+		}
+    },
 	"primary-muted": {
 		value: {
-			_light: "{colors.gray.600}",
+			_light: "{colors.gray.700}",
         	_dark: "{colors.white}",
 		}
     },

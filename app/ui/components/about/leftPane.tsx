@@ -23,7 +23,7 @@ export default function LeftPane({ cardBg, cardBorder, highlightColor, secondary
     const { colorMode, setColorMode, toggleColorMode } = useColorMode();
 
     const [currentImage, setCurrentImage] = useState(0);
-    const [transitioning, setTransitioning] = useState(1);
+    const [transitioning, setTransitioning] = useState(0);
     const images = ['/assets/Lell0.jpg', '/assets/Lell2.jpg'];
     const intervalTime = 10000;
 
@@ -64,6 +64,7 @@ export default function LeftPane({ cardBg, cardBorder, highlightColor, secondary
                 overflow="hidden"
                 maxW={{ base: '100%', lg: '100%' }}
                 outline="none"
+                bgGradient="linear(to-r, gray.900, gray.800)"
             >
                 <Box
                     borderRadius="full"
@@ -146,7 +147,7 @@ export default function LeftPane({ cardBg, cardBorder, highlightColor, secondary
                 </AnimatePresence>
             </Box>
             <Heading size="lg" textAlign="center" color={highlightColor} fontWeight="bold">
-                Lylie Fx
+                Eugene Lell
             </Heading>
             <Text textAlign="center" mt={2} fontSize="sm" color={secondaryTextColor}>
                 MacroEconomic Trader

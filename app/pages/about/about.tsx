@@ -14,25 +14,22 @@ export default function AboutPage() {
     const secondaryTextColor = "customColor.primary-emphasized";
     const cardBg = clsx({"gray.50": colorMode === "light", "gray.700": colorMode === "dark"})
     const cardBorder = useColorModeValue('gray.300', 'gray.600');
-    const highlightColor = useColorModeValue(
-        'customColor.secondary-emphasized._light',
-        'customColor.secondary-emphasized._dark'
-    );
-    const textStyle = {base: "sm", md: "md", lg: "lg"}
+    const highlightColor = 'customColor.secondary-emphasized';
+    const textStyle = {base: "sm", md: "md", lg: "lg"};
 
     return (
     <Box 
         id="about"
         as="section"
         bg="customColor.bg"  
-        py={10} 
+        py={20} 
         px={4}
      >
       <Flex
         maxW="container.xl"
         mx="auto"
         direction={{ base: 'column', lg: 'row' }}
-        gap={10}
+        gap={20}
         align={{ base: 'center', lg: 'flex-start' }}
       >
         <LeftPane
