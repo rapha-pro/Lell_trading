@@ -10,7 +10,18 @@ interface StockCardProps {
   price: number;
   change: number;
   volume?: number;
-  textColor: string;
+  logo?: string;
+  textColor?: string;
+}
+
+interface CryptoProps {
+  name: string;
+  symbol: string;
+  price: number;
+  change: number;
+  volume: number;
+  thumb: string;
+  textColor?: string;
 }
 
 const formatVolume = (volume: number): string => {
@@ -20,12 +31,13 @@ const formatVolume = (volume: number): string => {
   return volume.toString();
 };
 
-const StockCards: React.FC<StockCardProps> = ({ 
-  stockName, 
-  company, 
+const StockCards: React.FC<CryptoProps> = ({ 
+  name, 
+  symbol, 
   price, 
   change, 
   volume,
+  thumb,
   textColor 
 }) => {
   const isIncreasing = change > 0;
@@ -49,9 +61,9 @@ const StockCards: React.FC<StockCardProps> = ({
         flexDirection="column"
         justifyContent="center"
       >
-        <Heading size="md" mb={2}>{company}</Heading>
+        <Heading size="md" mb={2}>{name}</Heading>
         <Text fontSize="lg" fontWeight="bold">
-          {stockName}
+          {symbol}
           <Icon boxSize={4} ml={2}>
             <TrendingUp />
           </Icon>

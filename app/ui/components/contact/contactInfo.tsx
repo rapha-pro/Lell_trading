@@ -23,11 +23,12 @@ const ContactInfo = ({lightColor, color, colorMode}:ContactInfoProps) => {
             textAlign={['center', 'left']} 
             p={4}
             minW="30vw"
-            display="flex" 
             direction="column" 
-            mt={-36}
+            mt={[0, 0, 0, -36]}
             gap={5}
             color={color}
+            justifyContent={{base:"center", lg:"flex-start"}}
+            alignItems={{base:"center", lg:"flex-start"}}
             >
                 <Heading 
                     textStyle={{base: "xl", md:"2xl", lg:"3xl"}} 

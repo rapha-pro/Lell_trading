@@ -22,10 +22,10 @@ export default function RightPane({ cardBg, cardBorder, highlightColor, textColo
   return (
     <motion.div>
         <VStack
-        align="start"
-        spaceY={6}
-        flex="1"
-        textAlign={{ base: 'center', lg: 'left' }}
+            align="start"
+            spaceY={6}
+            flex="1"
+            textAlign={{ base: 'center', lg: 'left' }}
         >
         <Box>
             <Heading

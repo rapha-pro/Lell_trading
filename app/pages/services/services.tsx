@@ -17,7 +17,7 @@ export default function ServicesPage() {
 		as="section" 
 		bg="customColor.bg" 
 		minH="100vh" 
-		py={24} 
+		py={{base: 8, lgL:20}} 
 		px={4}
 		display="flex" 
 		alignItems="center" 

@@ -50,13 +50,13 @@ const RightPane: React.FC<RightPaneProps> = ({
     return (
       <Box 
         color={textColor} 
-        py={[4, 8, 8]}
+        py={[4, 8, 8, 8]}
         px={1}
-        w="100%"
+        // w="100%"
         maxW="100vw"
         display="flex"
 		flexDirection="column"
-        alignItems={{ smToLgL: 'center', xl: 'flex-start' }} // Align center on small and medium devices
+        alignItems={{ smToLgL: 'center', xl: 'flex-start' }}
         justifyContent={{ smToMd: 'center', lg: 'flex-start' }}
       >
         <Heading 

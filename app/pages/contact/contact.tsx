@@ -22,38 +22,44 @@ const ContactPage = () => {
     <Box
         id="contact"
         as="section"
-        py={20}
+        pt={-8}
+        pb={24}
         px={4}
     >
-        <Heading 
-			fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} 
-			bgGradient="linear(to-r, yellow.400, yellow.600)" 
-			color="customColor.primary-light-emphasized"
-            textAlign="center"
-		>
-            Contact Me
-        </Heading>
-        <Flex 
-            direction={{ base: "column", lg: "row" }} 
-            gap={{base: 8, lg:"44"}}
-            justify="center"
-            align="center"
-            height="100vh"    
+        <Flex
+            direction="column"
+            gap={{base: 8}}
         >
-            <ContactInfo 
-                lightColor={lightColor}
-                color={color}
-                colorMode={colorMode}
-            />
-            <ContactForm
-                inputFieldPadding={inputFieldPadding}
-                inputFieldVariant={inputFieldVariant}
-                fieldColor={fieldColor}
-                bg={bg}
-                lightColor={lightColor}
-                color={color}
-                colorMode={colorMode}
-            />
+            <Heading 
+                fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} 
+                bgGradient="linear(to-r, yellow.400, yellow.600)" 
+                color="customColor.primary-light-emphasized"
+                textAlign="center"
+
+            >
+                Contact Me
+            </Heading>
+            <Flex 
+                direction={{ base: "column", lg: "row" }} 
+                gap={{base: 8, lg:"36"}}
+                justify="center"
+                align="center" 
+            >
+                <ContactInfo 
+                    lightColor={lightColor}
+                    color={color}
+                    colorMode={colorMode}
+                />
+                <ContactForm
+                    inputFieldPadding={inputFieldPadding}
+                    inputFieldVariant={inputFieldVariant}
+                    fieldColor={fieldColor}
+                    bg={bg}
+                    lightColor={lightColor}
+                    color={color}
+                    colorMode={colorMode}
+                />
+            </Flex>
         </Flex>
     </Box>
     );
