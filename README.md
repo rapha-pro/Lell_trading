@@ -27,7 +27,7 @@ This project aims to create an engaging portfolio website for a Customer, showca
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Programming Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Chakra UI](https://www.chakra-ui.com/), [Aceternity UI](https://aceternity-ui.com/)
+- **UI Components**: [Chakra UI](https://www.chakra-ui.com/)
 - **Linting**: [ESLint](https://eslint.org/)
 
 ---
