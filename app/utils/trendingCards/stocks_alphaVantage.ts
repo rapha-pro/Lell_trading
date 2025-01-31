@@ -4,7 +4,7 @@ type StockData = {
 	price: number;
 	change: number;
 	volume: number;
-  }
+}
   
   type AlphaVantageStock = {
 	ticker: string;

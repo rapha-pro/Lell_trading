@@ -146,11 +146,11 @@ export default function LeftPane({ cardBg, cardBorder, highlightColor, secondary
                         </motion.div>
                 </AnimatePresence>
             </Box>
-            <Heading size="lg" textAlign="center" color={highlightColor} fontWeight="bold">
-                Eugene Lell
+            <Heading size="xl" textAlign="center" color={highlightColor} fontWeight="bold">
+                Lylie Fx
             </Heading>
             <Text textAlign="center" mt={2} fontSize="sm" color={secondaryTextColor}>
-                MacroEconomic Trader
+                Macro-Trader
             </Text>
             </Box>
         </motion.div>

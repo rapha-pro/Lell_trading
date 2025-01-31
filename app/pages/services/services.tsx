@@ -10,6 +10,10 @@ import { Suspense } from 'react';
 
 export default function ServicesPage() {
   const cardWidth = { base: '100%', md: 'calc(50% - 2rem)', lg: 'calc(33.33% - 2rem)' };
+  const serviceText = `
+	Our team of experienced professionals works closely with you to understand your investment goals, risk tolerance,
+	and financial objectives. We then develop a personalized investment strategy, designed to maximize returns while minimizing risk.
+  `;
 
   return (
     <Box 
@@ -33,8 +37,8 @@ export default function ServicesPage() {
 		>
             Services
           </Heading>
-          <Text fontSize="xl" color={useColorModeValue('gray.600', 'gray.400')} maxW="2xl">
-            Comprehensive trading and investment solutions tailored to your financial goals
+          <Text fontSize="xl" color="gray.400" maxW="70%">
+            {serviceText}
           </Text>
         </VStack>
         <Suspense

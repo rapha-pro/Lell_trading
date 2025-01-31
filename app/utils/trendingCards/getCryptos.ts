@@ -28,27 +28,27 @@ type CoinGeckoTrendingResponse = {
 }
 
 // File path to save the cached data
-const CACHE_FILE = './trending_crypto_data.json';
+const localStoragePath = 'trending_crypto_data';
 
 const saveToCache = (coins: TrendingCoin[]) => {
 	try {
-	fs.writeFileSync(CACHE_FILE, JSON.stringify(coins, null, 2));
+	  localStorage.setItem(localStoragePath, JSON.stringify(coins, null, 4));
 	} catch (error) {
-	console.error('Error saving to cache:', error);
+	  console.error('Error saving to cache:', error);
 	}
-};
-
-const readFromCache = (): TrendingCoin[] => {
+  };
+  
+  const readFromCache = (): TrendingCoin[] => {
 	try {
-		const data = fs.readFileSync(CACHE_FILE, 'utf-8')
-		console.log("==============Cached Trending Cryptocurrencies:\n", data)
-		return JSON.parse(data);
-	} catch(error) {
-		console.error('Error reading cached data:', error);
-		return [];
+	  const data = localStorage.getItem(localStoragePath);
+	  console.log('==============Cached Trending Cryptocurrencies:\n', data);
+	  return data ? JSON.parse(data) : [];
+	} catch (error) {
+	  console.error('Error reading cached data:', error);
+	  return [];
 	}
-
-}
+  };
+  
 
 const getTrendingCryptos = async (): Promise<TrendingCoin[]> => {
   try {
@@ -62,7 +62,7 @@ const getTrendingCryptos = async (): Promise<TrendingCoin[]> => {
     const data: CoinGeckoTrendingResponse = await response.json();
 
     // log the data to check the response
-    console.log("==================================Top 3 Trending Cryptocurrencies:")
+    console.log("================Top 3 Trending Cryptocurrencies:===========")
     console.log(data)
     
     // Get top 3 trending coins

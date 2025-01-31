@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Heading, Text, Icon } from '@chakra-ui/react';
+import { Box, Heading, Text, Icon, Image } from '@chakra-ui/react';
 import { motion } from 'motion/react';
 import { ArrowUp, ArrowDown, TrendingUp } from 'lucide-react';
 
@@ -10,7 +10,7 @@ interface StockCardProps {
   price: number;
   change: number;
   volume?: number;
-  logo?: string;
+  thumb?: string;
   textColor?: string;
 }
 
@@ -61,6 +61,18 @@ const StockCards: React.FC<CryptoProps> = ({
         flexDirection="column"
         justifyContent="center"
       >
+		{/* Coin Logo Image */}
+		<Box>
+			{thumb && (
+			<Image 
+				src={thumb} 
+				alt={`${name} logo`} 
+				boxSize="50px" 
+				borderRadius="full" 
+				mb={4}
+			/>
+			)}
+		</Box>
         <Heading size="md" mb={2}>{name}</Heading>
         <Text fontSize="lg" fontWeight="bold">
           {symbol}

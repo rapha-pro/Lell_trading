@@ -25,7 +25,7 @@ interface ContactFormProps {
 	bg: string;
 	lightColor: string;
 	color: string;
-	colorMode: string;
+	colorMode: string;   
 }
 
 const ContactForm = ({ 
@@ -147,7 +147,6 @@ const ContactForm = ({
 						}}
 					/>
 					)}
-					<Box w="1px" h="1px" bgColor={"red.500"} />
 				</Field>
 				))}
 			</Flex>
@@ -196,15 +195,31 @@ const ContactForm = ({
 				</Field>
 			))}
 
-            <Button
-				colorScheme="yellow"
+			<Button
 				onClick={handleSubmit}
-            >
-				<Icon>
+				bgColor="customColor.secondary-light"
+				w="60%"
+				alignSelf="center"
+				borderRadius="md"
+				className="group"
+				_hover={{
+					bg: "customColor.secondary",
+				}}
+			>
+				<Icon
+					name="send-icon"
+					cursor="pointer"
+					_groupHover={{
+						transform: "translateX(-50%) rotate(45deg)",
+						transition:"transform",
+						transitionDuration:"slow",
+						transitionTimingFunction:"ease-in-out",
+					}}
+				>
 					<Send />
-				</Icon>
-              	Send Message
-            </Button>
+				</Icon>	
+				Send Message
+			</Button>
           </VStack>
         </motion.div>
       </Box>

@@ -11,7 +11,7 @@ const Social = ({colorMode}: SocialProps) => {
     const bg = "gray.contrast"
 
     return (
-        <Flex justify={["center", "left"]} gap={4} mt={6}>
+        <Flex justify={{base:"center", smToMd: "center", lg:"left"}} gap={4} mt={6}>
         {socialButtons.map((btn, index) => (
             <Link
                 key={index}
@@ -53,7 +53,7 @@ const Social = ({colorMode}: SocialProps) => {
                 <Flex
                     justify="center"
                     align="center"
-                    boxSize={{smToMd: "16vw", lg:"4vw", xl:"3vw"}}
+                    boxSize={{smToMd: "5vw", lg:"4vw", xl:"3vw"}}
                     borderRadius="full"
                     transition="all 0.3s ease"
                     zIndex={1}

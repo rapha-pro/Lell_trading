@@ -29,7 +29,7 @@ export default function AboutPage() {
         maxW="container.xl"
         mx="auto"
         direction={{ base: 'column', lg: 'row' }}
-        gap={20}
+        gap={12}
         align={{ base: 'center', lg: 'flex-start' }}
       >
         <LeftPane

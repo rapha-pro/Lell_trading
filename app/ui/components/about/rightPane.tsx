@@ -2,7 +2,8 @@
 
 import { Box, VStack, Heading, Text, HStack, Icon } from '@chakra-ui/react';
 import { motion } from 'motion/react';
-import { aboutCards } from '@/app/utils/aboutCards';
+import { aboutCards } from '@/app/utils/about/aboutCards';
+import { aboutMeText } from '@/app/utils/about/aboutText';
 
 interface RightPaneProps {
     cardBg: string;
@@ -36,30 +37,19 @@ export default function RightPane({ cardBg, cardBorder, highlightColor, textColo
             >
             About Me
             </Heading>
-            <Text mt={4} textStyle={textStyle}  color={textColor}>
-                I am dedicated professional passionate about
-                delivering exceptional experiences. With few years of experience in
-                the field, I specialize in crafting trading solutions tailored
-                to your unique needs.
-            </Text>
-            <Text mt={4} textStyle={textStyle} color={textColor}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Iste voluptatum nam vel omnis reiciendis non beatae delectus, 
-                facilis in amet? Nisi asperiores rem deleniti animi esse vel 
-                error nemo temporibus! sit amet consectetur adipisicing elit. 
-                Iste voluptatum nam vel omnis reiciendis non beatae delectus, 
-                facilis in amet? Nisi asperiores rem deleniti animi esse vel 
-                error nemo
-            </Text>
-            <Text mt={4} textStyle={textStyle}  color={textColor}>
-                Nisi dolor sit amet consectetur adipisicing elit. 
-                Iste voluptatum nam vel omnis reiciendis non beatae delectus, 
-                facilis in amet? Nisi asperiores rem deleniti animi esse vel 
-                error nemo temporibus! sit amet consectetur adipisicing elit. 
-                Iste voluptatum nam vel omnis reiciendis non beatae delectus, 
-                facilis in amet? Nisi asperiores rem deleniti animi esse vel 
-                error 
-            </Text>
+            <Box>
+                {aboutMeText.map((text, index) => (
+                    <Text
+                        key={index}
+                        mt={4}
+                        textStyle={textStyle}
+                        color={textColor}
+                        maxW={{ base: '100%', lg: '69%' }}
+                    >
+                        {text}
+                    </Text>
+                ))}
+            </Box>
         </Box>
 
         <HStack
@@ -93,12 +83,13 @@ export default function RightPane({ cardBg, cardBorder, highlightColor, textColo
                     alignItems="center"
                     justifyContent="center"
                     outline="none"
+                    className="group"
                 >
                     <Icon 
                         boxSize={8} 
                         color="green.500" 
                         mb={2}
-                        _hover={{animation: "pulse"}}
+                        _groupHover={{animation: "pulse"}}
                         >
                         <stat.icon/>
                     </Icon>

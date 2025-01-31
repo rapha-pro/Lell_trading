@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Box, Flex, Heading, Text, Icon } from '@chakra-ui/react';
-import { featuresData } from '@/app/utils/homeCards';
+import { featuresData } from '@/app/utils/home/homeCards';
 
 
 interface RightPaneProps {
@@ -52,8 +52,7 @@ const RightPane: React.FC<RightPaneProps> = ({
         color={textColor} 
         py={[4, 8, 8, 8]}
         px={1}
-        // w="100%"
-        maxW="100vw"
+        minW="45vw"
         display="flex"
 		flexDirection="column"
         alignItems={{ smToLgL: 'center', xl: 'flex-start' }}

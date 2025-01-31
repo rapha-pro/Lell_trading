@@ -22,7 +22,7 @@ const ContactPage = () => {
     <Box
         id="contact"
         as="section"
-        pt={-8}
+        pt={[2, 2, 20]}
         pb={24}
         px={4}
     >
@@ -35,7 +35,6 @@ const ContactPage = () => {
                 bgGradient="linear(to-r, yellow.400, yellow.600)" 
                 color="customColor.primary-light-emphasized"
                 textAlign="center"
-
             >
                 Contact Me
             </Heading>

@@ -1,4 +1,4 @@
-import { TrendingUp, Target, Award, Globe } from 'lucide-react';
+import { TrendingUp, Target, Award, Globe, CarFront } from 'lucide-react';
 
 
 export const featuresData = [
@@ -21,5 +21,5 @@ export const featuresData = [
       icon: Globe,
       title: "Global Market Insight",
       description: "Deep understanding of international market trends and opportunities."
-    }
-];
+    },
+];   
