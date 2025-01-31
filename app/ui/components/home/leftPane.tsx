@@ -75,7 +75,7 @@ const LeftPane: React.FC<LeftPaneProps> = ({ textColor, textStyle }) => {
               transition={{ duration: 0.3 }}
             >
 				<VStack gap={7}  alignItems={{sm:"flex-start"}} >
-					<Text textStyle={{base: "lg", md: "xl", lg: "2xl"}} fontWeight={500} color="primary-muted">{homeText.homeText_title}</Text>
+					<Text textStyle={{base: "2xl", md: "3xl", lg: "4xl"}} fontWeight={500} color="primary-muted">{homeText.homeText_title}</Text>
 					<Text textStyle={textStyle} color={textColor}> {homeText.homeText_description}</Text>
 					<Text textStyle={{base: "md", md: "lg", lg: "xl"}} fontWeight={400} paddingBottom={1} color={textColor}> {homeText.homeServices_title}</Text>
 				</VStack>
@@ -93,9 +93,12 @@ const LeftPane: React.FC<LeftPaneProps> = ({ textColor, textStyle }) => {
 
   
             {/* Feature Section with Icon & Text Animation */}
-            <VStack 
-              alignItems={['flex-start']} 
-              mt={8}
+            <Flex
+			    flexDirection="row"
+				flexWrap="wrap"
+				gap={5}
+				alignItems={['flex-start']} 
+				mt={8}
             >
 			{homeServices.map(({ id, icon: Icon, delay, text }) => (
 				<motion.div
@@ -118,12 +121,12 @@ const LeftPane: React.FC<LeftPaneProps> = ({ textColor, textStyle }) => {
 						<Icon size={32} className="mr-4">
 						</Icon>
 						<Text fontWeight="bold" textStyle={textStyle}>
-						{text}
+							{text}
 						</Text>
 					</Box>
 				</motion.div>
 			))}
-            </VStack>
+            </Flex>
 			<VStack
 				mt={14}
 				py={[4, 8, 8]}

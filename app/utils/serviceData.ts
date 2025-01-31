@@ -32,11 +32,6 @@ export const servicesList = [
       description: '24/7 analysis of international markets and trading opportunities.'
     },
     {
-      icon: Users,
-      title: 'Group Trading Sessions',
-      description: 'Live trading rooms and collaborative analysis with fellow traders.'
-    },
-    {
       icon: Briefcase,
       title: 'Investment Consulting',
       description: 'Personalized investment strategies aligned with your financial goals.'
@@ -51,10 +46,5 @@ export const servicesList = [
       title: 'Forex Trading',
       description: 'Specialized forex market analysis and currency pair strategies.'
     },
-    {
-      icon: Rocket,
-      title: 'Algorithmic Trading',
-      description: 'Development and implementation of automated trading systems.'
-    }
 ];
   

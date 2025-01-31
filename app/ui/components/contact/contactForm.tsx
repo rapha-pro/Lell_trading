@@ -97,7 +97,7 @@ const ContactForm = ({
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <VStack spaceY={4} align="stretch">
+          <VStack spaceY={5} align="stretch">
 		  	{/* Flex container for Name and Last Name */}
   			<Flex direction={{ base: "column", lg: "row" }} gap={4}>
 				{formFields.slice(0, 2).map((field) => (
@@ -113,6 +113,7 @@ const ContactForm = ({
 					flex="1" // Ensures equal width when displayed side by side
 					minWidth={{ base: "100%", lg: "45%" }}
 				>
+					{/* Stack first two fields horizontally */}
 					{field.textarea ? (
 					<Textarea
 						placeholder={`${field.label}`}

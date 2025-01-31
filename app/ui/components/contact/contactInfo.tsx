@@ -25,13 +25,13 @@ const ContactInfo = ({lightColor, color, colorMode}:ContactInfoProps) => {
             minW="30vw"
             direction="column" 
             mt={[0, 0, 0, -36]}
-            gap={5}
+            gap={6}
             color={color}
             justifyContent={{base:"center", lg:"flex-start"}}
             alignItems={{base:"center", lg:"flex-start"}}
             >
                 <Heading 
-                    textStyle={{base: "xl", md:"2xl", lg:"3xl"}} 
+                    textStyle={{base: "2xl", md:"3xl", lg:"4xl"}} 
                 >
                     Get in Touch
                 </Heading>
@@ -42,8 +42,8 @@ const ContactInfo = ({lightColor, color, colorMode}:ContactInfoProps) => {
                     </Icon>
                     <Text fontWeight="bold">Email:
                     </Text>
-                    <Link href="mailto:">
-                        contact@email.com
+                    <Link href="mailto:Lelleugene49@gmail.com">
+                        Lelleugene49@gmail.com
                     </Link>
                 </HStack>
                 <Text>Connect with me on Socials</Text>

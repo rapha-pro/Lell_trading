@@ -26,34 +26,21 @@ const Social = ({colorMode}: SocialProps) => {
                 borderRadius="full"
                 overflow="hidden"
                 zIndex={1}
-                p={{base:4, smToMd:3, lgL:1}}
+                p={1.3}
                 border="1px solid rgba(205, 205, 255, 0.5)"
                 _hover={{
                     border: `1px solid ${btn.hoverColor}`,
-                    padding: 1.5,
                     transition: "padding",
                 }}
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
             >
-                {/* Rotating Light Effect */}
-                <Box
-                    position="absolute"
-                    inset={0}
-                    borderRadius="full"
-                    zIndex={-1}
-                    bgGradient={`conic-gradient(${btn.effectColor} 0deg, transparent 120deg)`} // Custom edge light
-                    animation="spin"
-                    opacity={hovered === index ? 0.3 : 0}
-                    zIndex={-1}
-                >
-                </Box>
 
                 {/* Inner Circle for Icon */}
                 <Flex
                     justify="center"
                     align="center"
-                    boxSize={{smToMd: "5vw", lg:"4vw", xl:"3vw"}}
+                    boxSize="3.2rem"
                     borderRadius="full"
                     transition="all 0.3s ease"
                     zIndex={1}
@@ -61,10 +48,9 @@ const Social = ({colorMode}: SocialProps) => {
                     _hover={{
                         bg: btn.bgColor,
                         color: btn.hoverColor,
-                        transform: "scale(1.05)",
                         transition: "transform, bg",
                         transitionDuration: "slow",
-                        transitionTimingFunction: "ease-in-out",
+                        transitionTimingFunction: "ease-out",
                     }}
                 >
                 <Icon boxSize={6} >

@@ -24,7 +24,7 @@ export default function LeftPane({ cardBg, cardBorder, highlightColor, secondary
 
     const [currentImage, setCurrentImage] = useState(0);
     const [transitioning, setTransitioning] = useState(0);
-    const images = ['/assets/Lell0.jpg', '/assets/Lell2.jpg'];
+    const images = ['/assets/Lell0.jpg', '/assets/Lell2.jpg', '/assets/Lell3.jpg'];
     const intervalTime = 10000;
 
     useEffect(() => {
@@ -80,19 +80,6 @@ export default function LeftPane({ cardBg, cardBorder, highlightColor, secondary
                     display="flex"
                     alignItems="center"
                     justifyContent="center" 
-                    // _before={{
-                    //     content: `""`,
-                    //     position: "absolute",
-                    //     top: "-25%",
-                    //     left: "-25%",
-                    //     width: "150%",
-                    //     height: "170%",
-                    //     background:
-                    //       "conic-gradient(rgba(244, 114, 182, 0.8) 0deg, rgba(192, 132, 252, 0.8) 80deg, transparent 2deg)",
-                    //     animation: "spin",
-                    //     zIndex: -1,
-                    //     borderRadius: "full", // Makes sure the animation follows a circular path
-                    //   }}
                     _after={{
                         content: `""`,
                         position: "absolute",
@@ -136,7 +123,7 @@ export default function LeftPane({ cardBg, cardBorder, highlightColor, secondary
                             <Image
                             src={images[currentImage]}
                             alt="profile image"
-                            width="100%"
+                            width="99.5%"
                             height="100%"
                             borderRadius="full"
                             position="relative"

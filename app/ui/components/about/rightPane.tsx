@@ -44,7 +44,7 @@ export default function RightPane({ cardBg, cardBorder, highlightColor, textColo
                         mt={4}
                         textStyle={textStyle}
                         color={textColor}
-                        maxW={{ base: '100%', lg: '69%' }}
+                        maxW={{ base: '100%', lg: '65%' }}
                     >
                         {text}
                     </Text>
