@@ -44,40 +44,64 @@ const ContactForm = ({
         phone: '',
         country: '',
         message: ''
-      });
+    });
     
-      const [errors, setErrors] = useState({
-        name: false,
-        email: false,
-        country: false,
-        message: false
-      });
+	const [errors, setErrors] = useState({
+	name: false,
+	email: false,
+	country: false,
+	message: false
+	});
     
-      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-      };
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = e.target;
+		setFormData(prev => ({ ...prev, [name]: value }));
+	};
+
+	const validateForm = () => {
+	const newErrors = {
+		name: !formData.name,
+		email: !formData.email,
+		country: !formData.country,
+		message: !formData.message
+	};
+	setErrors(newErrors);
+	return !Object.values(newErrors).some(err => err);
+	};
     
-      const validateForm = () => {
-        const newErrors = {
-            name: !formData.name,
-            email: !formData.email,
-            country: !formData.country,
-            message: !formData.message
-        };
-        setErrors(newErrors);
-        return !Object.values(newErrors).some(err => err);
-      };
-    
-      const handleSubmit = () => {
-        if (validateForm()) {
-          toaster.create({
-            description: 'Thank you! Your message has been sent successfully.',
-            type: 'success',
-          });
-          setFormData({ name: '', lastName: '', email: '', phone: '', country: '', message: '' });
-        }
-      };
+	const handleSubmit = async () => {
+	if (validateForm()) {
+		try {
+			const response = await fetch('api/send', {
+				method: 'POST',
+				headers: {
+				'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+			
+			console.log("IT HAS BEEN SENT ^^^^^^^^^^", response)
+			if (response.ok) {
+				toaster.create({
+					description: 'Thank you! Your message has been sent successfully.',
+					type: 'success',
+				});
+				setFormData({ name: '', lastName: '', email: '', phone: '', country: '', message: '' });
+			} else {
+				toaster.create({
+					description: 'Something went wrong. Please try again later.',
+					type: 'error',
+				});
+			}
+		} catch (error) {
+			toaster.create({
+				description: 'Network error. Please check your connection.',
+				type: 'error',
+			});
+		}
+	}
+	};
+	  
 
 		const borderColor = "blue.100";
 		const hoverBorderColor = "blue.200";
@@ -199,7 +223,7 @@ const ContactForm = ({
 			<Button
 				onClick={handleSubmit}
 				bgColor="customColor.secondary-light"
-				w="60%"
+				w={["85%", "60%"]}
 				alignSelf="center"
 				borderRadius="md"
 				className="group"
