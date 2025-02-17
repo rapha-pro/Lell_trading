@@ -26,7 +26,7 @@ const Social = ({colorMode}: SocialProps) => {
                 borderRadius="full"
                 overflow="hidden"
                 zIndex={1}
-                p={1.3}
+                p={1.2}
                 border="1px solid rgba(205, 205, 255, 0.5)"
                 _hover={{
                     border: `1px solid ${btn.hoverColor}`,
@@ -40,7 +40,7 @@ const Social = ({colorMode}: SocialProps) => {
                 <Flex
                     justify="center"
                     align="center"
-                    boxSize="3.2rem"
+                    boxSize="2.8rem"
                     borderRadius="full"
                     transition="all 0.3s ease"
                     zIndex={1}

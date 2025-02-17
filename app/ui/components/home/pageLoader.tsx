@@ -17,7 +17,7 @@ const LeftPaneSkeleton = () => {
       direction="column" 
       width="full" 
       gap={6}
-      bg={bgColor}
+      bg={'gray.100'}
       p={6}
       borderRadius="xl"
     >

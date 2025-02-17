@@ -4,6 +4,13 @@ import { Box, VStack, Heading, Text, HStack, Icon } from '@chakra-ui/react';
 import { motion } from 'motion/react';
 import { aboutCards } from '@/app/utils/about/aboutCards';
 import { aboutMeText } from '@/app/utils/about/aboutText';
+import {
+    HoverCardArrow,
+    HoverCardContent,
+    HoverCardRoot,
+    HoverCardTrigger,
+  } from "@/components/ui/hover-card"
+  
 
 interface RightPaneProps {
     cardBg: string;
@@ -67,36 +74,43 @@ export default function RightPane({ cardBg, cardBorder, highlightColor, textColo
                 transition={{ duration: 1, delay: index * 0.2, scale: "0.3 ease-out" }}
                 whileHover={{ scale: 1.02 }}
             >
-                <Box
-                    key={index}
-                    as={motion.div}
-                    _hover={{ scale: 1.05 }}
-                    bg={cardBg}
-                    borderRadius="xl"
-                    borderColor={cardBorder}
-                    p={4}
-                    textAlign="center"
-                    shadow="md"
-                    width="150px"
-                    display="flex"
-                    flexDirection="column"
-                    alignItems="center"
-                    justifyContent="center"
-                    outline="none"
-                    className="group"
-                >
-                    <Icon 
-                        boxSize={8} 
-                        color="green.500" 
-                        mb={2}
-                        _groupHover={{animation: "pulse"}}
-                        >
-                        <stat.icon/>
-                    </Icon>
-                    <Text fontSize="sm" color={textColor} fontWeight="bold">
-                    {stat.title}
-                    </Text>
-                </Box>
+                <HoverCardRoot openDelay={500} closeDelay={100} unstyled>
+                    <HoverCardTrigger
+                        key={index}
+                        as={motion.div}
+                        _hover={{ scale: 1.05 }}
+                        bg={cardBg}
+                        borderRadius="xl"
+                        borderColor={cardBorder}
+                        p={2.5}
+                        textAlign="center"
+                        shadow="md"
+                        width="70px"
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="center"
+                        justifyContent="center"
+                        outline="none"
+                        className="group"
+                    >
+                        <Icon 
+                            boxSize={8} 
+                            color="green.500" 
+                            mb={2}
+                            _groupHover={{animation: "pulse"}}
+                            >
+                            <stat.icon/>
+                        </Icon>
+                    </HoverCardTrigger>
+                    <HoverCardContent>
+                        <HoverCardArrow />
+                        <Box>
+                            <Text fontSize="sm" color={textColor} fontWeight="bold">
+                            {stat.title}
+                            </Text>
+                        </Box>
+                    </HoverCardContent>
+                </HoverCardRoot>
             </motion.div>
             ))}
         </HStack>

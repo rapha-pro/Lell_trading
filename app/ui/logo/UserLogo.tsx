@@ -5,7 +5,23 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useColorModeValue } from '@/components/ui/color-mode';
 
-export default function UserLogo() {
+interface UserLogoProps {
+  width?: number;
+  height?: number;
+  opacity?: number;
+  src: string;
+  lightModeColor?: string;
+  darkModeColor?: string;
+}
+
+export default function UserLogo({
+  width = 40,
+  height = 40,
+  opacity = 1,
+  src,
+  lightModeColor = 'gray.500',
+  darkModeColor = 'gray.200',
+}: UserLogoProps) {
     const [isMounted, setIsMounted] = useState(false);
 
     // Wait for hydration to complete
@@ -13,19 +29,19 @@ export default function UserLogo() {
         setIsMounted(true);
     }, []);
 
-    const color = useColorModeValue('gray.500', 'gray.200');
+    const color = useColorModeValue(lightModeColor, darkModeColor);
 
     if (!isMounted) {
         return null;
     }
 
   return (
-    <Box display="flex" alignItems="center">
+    <Box display="flex" alignItems="center" opacity={opacity}>
       <Image
-        src="/assets/imageLogo.png" 
+        src={src} 
         alt="User Logo"
-        width={40}
-        height={40}
+        width={width}
+        height={height}
         className="rounded-sm"
       />
 
@@ -34,7 +50,7 @@ export default function UserLogo() {
         ml="3"
         fontSize="xl"
         fontWeight="bold"
-        color={color || 'gray.500'}
+        color={color}
       >
         Feathers
       </Box>

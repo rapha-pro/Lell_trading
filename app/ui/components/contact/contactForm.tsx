@@ -223,7 +223,7 @@ const ContactForm = ({
 			<Button
 				onClick={handleSubmit}
 				bgColor="customColor.secondary-light"
-				w={["85%", "60%"]}
+				w={["90%", "85%", "60%"]}
 				alignSelf="center"
 				borderRadius="md"
 				className="group"

@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { Box, Flex, Heading, Text, Icon } from '@chakra-ui/react';
 import { featuresData } from '@/app/utils/home/homeCards';
+import UserLogo from '../../logo/userLogo';
 
 
 interface RightPaneProps {
@@ -54,7 +55,7 @@ const RightPane: React.FC<RightPaneProps> = ({
         px={1}
         minW="45vw"
         display="flex"
-		flexDirection="column"
+		    flexDirection="column"
         alignItems={{ smToLgL: 'center', xl: 'flex-start' }}
         justifyContent={{ smToMd: 'center', lg: 'flex-start' }}
       >
@@ -65,7 +66,7 @@ const RightPane: React.FC<RightPaneProps> = ({
             justifyContent='center'
             display={{ smToLgL: "block", xl: "none" }}
             pb={11}
-			color="gray.emphasized"
+			      color="gray.emphasized"
         >
           Our Features
         </Heading>
@@ -122,6 +123,19 @@ const RightPane: React.FC<RightPaneProps> = ({
                 </Box>
               </motion.div>
             ))}
+
+			<Flex
+				display={{ base: "none", lg: "flex" }}
+			>
+				<UserLogo 
+					src="/assets/imageLogo.png"
+					width={500}
+					height={50}
+					opacity={0.1}
+					lightModeColor="white"
+					darkModeColor="black"
+					/>
+			</Flex>
           </Flex>
       </Box>
     );

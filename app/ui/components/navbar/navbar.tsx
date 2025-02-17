@@ -43,13 +43,13 @@ export default function Navbar() {
     <Box
 	    as="nav" 
         position="fixed" 
-		top="0" 
-		left="0"  
-		bg={bg} 
-		w="100%" 
-		maxW="100vw" 
-		color={color}
-		zIndex="10"
+      top="0" 
+      left="0"  
+      bg={bg} 
+      w="100%" 
+      maxW="100vw" 
+      color={color}
+      zIndex="10"
     >
       {/* Navbar Container */}
       <div
@@ -62,7 +62,13 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="#" shallow={true}>
             <h1 className="text-xl font-bold">
-              <UserLogo />
+            <UserLogo 
+              src="/assets/imageLogo.png"
+              width={50}
+              height={50}
+              lightModeColor="gray.500"
+              darkModeColor="gray.200"
+            />
             </h1>
           </Link>
         </div>

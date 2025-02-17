@@ -4,9 +4,11 @@ import { motion } from 'motion/react';
 import { Box, Flex, Text, VStack, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import StockCards from './stockCards';
-import { getTrendingCryptos, type TrendingCoin } from '@/app/utils/trendingCards/getCryptos';
+// import { getTrendingCryptos, type TrendingCoin } from '@/app/utils/trendingCards/getCryptos';
+import { getTrendingStocks, type TrendingStock } from '@/app/utils/trendingCards/getStocks';
 import { homeServices } from '@/app/utils/home/homeServices';
 import homeText from '@/app/utils/home/homeText';
+import UserLogo from '../../logo/userLogo';
 
 interface LeftPaneProps {
     textColor: string;
@@ -19,23 +21,15 @@ interface TextStyle {
     lg: string
 }
 
-interface StockData {
-	name: string;
-	company: string;
-	price: number;
-	change: number;
-	volume: number;
-}
-
 
 const LeftPane: React.FC<LeftPaneProps> = ({ textColor, textStyle }) => {
 
-	const [trendingCoins, setTrendingCoins] = useState<TrendingCoin[]>([]);
+	const [trendingStocks, setTrendingStocks] = useState<TrendingStock[]>([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
-		  const data = await getTrendingCryptos();
-		  setTrendingCoins(data);
+		  const data = await getTrendingStocks();
+		  setTrendingStocks(data);
 		};
 		
 		fetchData();
@@ -139,30 +133,30 @@ const LeftPane: React.FC<LeftPaneProps> = ({ textColor, textStyle }) => {
 					initial={{ opacity: 0, scale: 0.9 }}
 					animate={{ opacity: 1, scale: 1 }}
 				>
-					<Heading fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }} mb={8} color="gray.emphasized">
-						Top Trending Currencies
+					<Heading fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }} mb={6} color="gray.emphasized">
+						Top Trending Stocks
 					</Heading>
 				</motion.div>
-				<Flex 
-					flexWrap="wrap" 
-					gap={6} 
-					direction="row"
-					justifyContent="center" 
-					alignItems="center"
-				>
-					{trendingCoins.map((coin) => (
-						<StockCards
-							key={coin.name}
-							name={coin.name}
-							symbol={coin.symbol}
-							price={coin.price}
-							change={coin.change}
-							volume={coin.volume}
-							thumb={coin.thumb}
-							textColor={textColor}
-						/>
-					))}
-				</Flex>
+					<Flex 
+						flexWrap="wrap" 
+						gap={6} 
+						direction="row"
+						justify="center"
+						alignItems="center"
+					>
+						{trendingStocks.map((coin) => (
+							<StockCards
+								key={coin.name}
+								name={coin.name}
+								symbol={coin.symbol}
+								price={coin.price}
+								change={coin.change}
+								volume={coin.volume}
+								// thumb={coin.thumb}
+								textColor={textColor}
+							/>
+						))}
+					</Flex>
 			</VStack>
 			</VStack>
         </Flex>
